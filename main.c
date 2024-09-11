@@ -2,7 +2,7 @@
 #define RED_LED BIT0 //P1.0
 #define GREEN_LED BIT6 //P6.6
 #define BUTTON1 BIT1 //push button P4.1
-#define BUTTON2 BIT2 //push button P2.3
+#define BUTTON2 BIT3 //push button P2.3
 
 
 
@@ -36,14 +36,14 @@ while(1){
             } while((P4IN & BUTTON1) == 0x00);
         }
 
-       /* else if((P2IN & BUTTON2) == 0x00){
+       else if((P2IN & BUTTON2) == 0x00){
          _delay_cycles(5000);
         if((P2IN & BUTTON2) == 0x00){
-            P6OUT |= GREEN_LED;
+            P6OUT ^= GREEN_LED;
             }
         while((P2IN & BUTTON2) == 0x00);}
 
-*/
+
 }
 //return 0;
 }
